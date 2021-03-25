@@ -27,3 +27,21 @@ exports.resize = (req, res, next) => {
 	});
 };
 
+
+exports.testResize = (req, res, next) => {
+	exec("ls -la", (error, stdout, stderr) => {
+	    if (error) {
+	    	res.status(500).json(error.message);
+	        console.log(`error: ${error.message}`);
+	        return;
+	    }
+	    if (stderr) {
+	    	res.status(500).json(stderr);
+	        console.log(`stderr: ${stderr}`);
+	        return;
+	    }
+	    // SUCCESS
+	    res.status(200).json("OK");
+	    // console.log(`stdout: ${stdout}`);
+	});
+};
