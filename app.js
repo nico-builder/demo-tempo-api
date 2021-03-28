@@ -2,11 +2,14 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const API_URL = "/api/v1";
+var cors = require('cors');
+
 
 // load routes
 const videoRoutes = require('./routes/video');
 
 const app = express();
+app.use(cors());
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
