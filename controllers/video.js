@@ -32,6 +32,10 @@ exports.resize = (req, res, next) => {
 };
 
 exports.downloadVideo = (req, res, next) => {
-	const file = req.body.path;
+	const file = "videos/nouveau.mp4";
 	res.download(file);
+};
+
+exports.getAWS = (req, res, next) => {
+	res.status(200).json("OK");
 };
