@@ -30,9 +30,11 @@ exports.resize = (req, res, next) => {
 	    }
 	    // SUCCESS
 	    // return video path
-	    console.log("succes, path: videos/nouveau.mp4");
-	    res.status(200).json({path: "videos/nouveau.mp4"});
-	    // console.log(`stdout: ${stdout}`);
+	    if(stdout){
+	    	 console.log("succes, path: videos/nouveau.mp4");
+		    res.status(200).json({path: "videos/nouveau.mp4"});
+		    // console.log(`stdout: ${stdout}`);
+	    }
 	});
 };
 
