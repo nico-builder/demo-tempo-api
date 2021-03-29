@@ -5,6 +5,6 @@ const multer = require('../middleware/multer-config');
 const videoCtrl = require('../controllers/video');
 
 router.post('/', multer, videoCtrl.resize);
-router.get('/', videoCtrl.getAWS);
+router.get('/', videoCtrl.downloadVideo);
 
 module.exports = router;

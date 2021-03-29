@@ -45,6 +45,3 @@ exports.downloadVideo = (req, res, next) => {
 	res.download(file);
 };
 
-exports.getAWS = (req, res, next) => {
-	res.status(200).json("OK");
-};
